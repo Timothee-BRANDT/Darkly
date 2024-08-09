@@ -63,6 +63,6 @@ Header set X-Robots-Tag "noindex, nofollow"
 
 ## Resources
 
-[How to Address Security Risks with Robots.txt Files](https://www.searchenginejournal.com/robots-txt-security-risks/289719/)
-[Balise meta robots](https://robots-txt.com/meta-robots/)
-[En-tête HTTP X-Robots-Tag](https://robots-txt.com/x-robots-tag/)
+- [How to Address Security Risks with Robots.txt Files](https://www.searchenginejournal.com/robots-txt-security-risks/289719/)
+- [Balise meta robots](https://robots-txt.com/meta-robots/)
+- [En-tête HTTP X-Robots-Tag](https://robots-txt.com/x-robots-tag/)
