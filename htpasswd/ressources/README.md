@@ -53,7 +53,7 @@ Upon successful login, you will receive the flag:
 <meta name="robots" content="noindex, nofollow">
 ```
 
-- **Implement X-Robots-Tag Header in HTTP Responses:** Configure your server to include the X-Robots-Tag HTTP header in responses for pages or resources that should not be indexed or followed. This provides an additional layer of control by instructing search engines to disregard the content, regardless of the meta tags present in the HTML. This method is useful for non-HTML content, such as PDFs or other files, where embedding meta tags is not possible. This can be set in the server configuration or .htaccess file:
+- **Implement X-Robots-Tag Header in HTTP Responses:** Configure your server to include the X-Robots-Tag HTTP header in responses for pages or resources that should not be indexed or followed. This provides an additional layer of control by instructing search engines to disregard the content, regardless of the meta tags present in the HTML. This method is useful for non-HTML content, such as PDFs or other files, where embedding meta tags is not possible. This can be set in the server configuration or `.htaccess` file:
 
 ```apache
 <IfModule mod_headers.c>
