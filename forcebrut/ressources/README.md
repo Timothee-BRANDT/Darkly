@@ -3,6 +3,10 @@ On peux donc facilement brutforce le mot de passe.
 username: admin
 password: shadow
 
+https://nordpass.com/most-common-passwords-list/
+https://en.wikipedia.org/wiki/List_of_the_most_common_passwords
+position 87
+
 Solution
 Ne surtout pas mettre de choses generiques comme admin en username.
 Il faut limiter le nombre de requetes par login.

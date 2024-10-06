@@ -1,5 +1,6 @@
 Les 3 liens de redirection vers les reseaux sociaux en bas de page ne disposent d'aucune securite pour verifier vers quel lien on souhaite rediriger
 
+Il suffit d'inspecter l'element et de changer le lien de redirection
 
 Solution
 Au click sur le bouton, il faudrais rajouter une fonction de check pour s'assurer qu'on est bien rediriger sur la bonne page

@@ -1,5 +1,5 @@
 Sur la page de vote des users (Survey), on peux directement modifier les valeurs en lien avec le select option.
-Donc si on change la valeur de l'option 2 pour le premier user par exemple, et qu'on submit le formulaire, on peux facilement tricher sur la quantiter de points que ce user recevra.
+Donc si on change la valeur de l'option 2 pour le premier user par exemple (mettre une valeur superieur a 10), et qu'on submit le formulaire, on peux facilement tricher sur la quantiter de points que ce user recevra.
 
 
 Solution
