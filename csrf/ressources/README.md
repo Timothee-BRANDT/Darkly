@@ -31,4 +31,11 @@ Therefore, the flag is: `f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d
 
 ## Prevention
 
-To prevent such exploits, it is important to implement security measures such as validating the Referer header. For detailed guidance, refer to the OWASP Cheat Sheet on Cross-Site Request Forgery (CSRF) Prevention: [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#identifying-source-origin-via-originreferer-header)
+1. **Use CSRF Tokens**: Require a unique token with each sensitive request to prevent unauthorized actions.
+2. **Referer-Based Validation**: Check if requests originate from the application's own domain..
+3. **Enable SameSite Cookies**: Restrict cookies from being sent with cross-site requests to block unauthorized access.
+
+## Resources
+
+- [PortSwigger CSRF Guide](https://portswigger.net/web-security/csrf)
+- [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#identifying-source-origin-via-originreferer-header)
